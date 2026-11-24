@@ -1,0 +1,13 @@
+{
+  "id": "example",
+  "name": "Example Plugin",
+  "version": "1.1.0",
+  "description": "Replaces {{date}} in prompts with the current ISO date.",
+  "author": "Miyapad",
+  "homepage": "https://github.com/LordFoogThe4rd/miyapad-plugin-example",
+  "minMiyapad": "2.9.0",
+  "order": 0,
+  "startTimeout": 5,
+  "hookTimeout": 10,
+  "api": 1
+}
