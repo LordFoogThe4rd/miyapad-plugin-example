@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.1] - 2026-11-25
+
+### Added
+- Toolbar button to open the custom date modal directly (`Pick custom date…`) and default-expanded sidebar panel
+
 ## [1.3.0] - 2026-11-25
 
 ### Added

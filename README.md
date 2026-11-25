@@ -9,7 +9,7 @@ Replaces `{date}` / `{{date}}` in prompts via `miyapad.context.setPlaceholder`, 
 Paste any of these addresses into **Preferences → Plugins → Import from URL…**:
 
 - **Latest release:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example`
-- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.3.0`
+- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.3.1`
 - **Pinned branch:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/tree/main/dist/example.miyaplugin`
 - **Pinned commit:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/blob/<commit-sha>/dist/example.miyaplugin`
 
