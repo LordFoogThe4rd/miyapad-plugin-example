@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.3.0] - 2026-11-25
+
+### Added
+- Custom date picker modal (`hooks.modals` + `miyapad.ui.Modal`), opened from the sidebar panel or the Quick Switcher command (`> Example Plugin: Insert Custom Date…`)
+
 ## [1.2.0] - 2026-11-25
 
 ### Added
