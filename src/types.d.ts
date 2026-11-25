@@ -87,6 +87,20 @@ interface PluginUiControls {
 	}>;
 }
 
+type SqlParam = string | number | boolean | null;
+
+interface PluginDbNamespace {
+	get(key: string): Promise<unknown>;
+	set(key: string, value: unknown): Promise<void>;
+	delete(key: string): Promise<void>;
+	keys(prefix?: string): Promise<string[]>;
+	clear(): Promise<void>;
+	/** Server-only raw SQL query returning rows (`undefined` in standalone mode). */
+	query?: (sql: string, params?: SqlParam[]) => Promise<Record<string, unknown>[]>;
+	/** Server-only raw SQL execution (`undefined` in standalone mode). */
+	exec?: (sql: string, params?: SqlParam[]) => Promise<void>;
+}
+
 interface MiyapadPluginContext {
 	readonly id: string;
 	readonly name: string;
@@ -98,12 +112,8 @@ interface MiyapadPluginContext {
 	readonly html: (strings: TemplateStringsArray, ...values: unknown[]) => ReactNode;
 	readonly ui: PluginUiControls;
 	readonly editor: PluginEditor | undefined;
-	readonly storage: {
-		get(key: string): Promise<unknown>;
-		set(key: string, value: unknown): Promise<void>;
-		delete(key: string): Promise<void>;
-		keys(): Promise<string[]>;
-	};
+	readonly storage: PluginDbNamespace;
+	readonly db: (name: string) => PluginDbNamespace;
 	readonly sessionData: {
 		readonly sessionId: number | undefined;
 		get(key: string): unknown;

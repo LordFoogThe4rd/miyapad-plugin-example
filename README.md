@@ -2,14 +2,19 @@
 
 Minimal `.miyaplugin` reference and test fixture for Miyapad.
 
-Replaces `{date}` / `{{date}}` in prompts via `miyapad.context.setPlaceholder`, adds an inline format setting (`hooks.settings` + `miyapad.ui.SelectBox`), an editor toolbar button (`hooks.toolbar` + `miyapad.editor`), a sidebar widget (`hooks.sidebar`), and a custom date picker modal (`hooks.modals` + `miyapad.ui.Modal`, also reachable from Quick Switcher `hooks.commands`). Source lives in `src/main.ts` importing `src/util.ts`, bundled with `esbuild` into `main.js`, and tracks startup loads in `miyapad.storage`.
+Replaces `{date}` / `{{date}}` in prompts via `miyapad.context.setPlaceholder`, adds an inline format setting (`hooks.settings` + `miyapad.ui.SelectBox`), editor toolbar buttons (`hooks.toolbar` + `miyapad.editor`), a sidebar widget (`hooks.sidebar`), and a custom date picker modal (`hooks.modals` + `miyapad.ui.Modal`, also reachable from Quick Switcher `hooks.commands`). Source lives in `src/main.ts` importing `src/util.ts`, bundled with `esbuild` into `main.js`.
+
+Storage showcase:
+- Tracks startup loads and `dateFormat` in `miyapad.storage` (default namespace).
+- Records inserted dates in a named namespace `miyapad.db('history')` using `set`, `keys('entry/')`, `get`, and `clear` (isolated from `miyapad.storage`) in both standalone IndexedDB and server modes.
+- Automatically detects server-only raw SQL (`typeof db.query === 'function'`) and creates/queries a `date_log` SQLite table via `exec` and parameterized `query` when connected to the Miyapad server, falling back to IndexedDB KV in standalone mode.
 
 ## Install addresses
 
 Paste any of these addresses into **Preferences → Plugins → Import from URL…**:
 
 - **Latest release:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example`
-- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.3.1`
+- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.4.0`
 - **Pinned branch:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/tree/main/dist/example.miyaplugin`
 - **Pinned commit:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/blob/<commit-sha>/dist/example.miyaplugin`
 

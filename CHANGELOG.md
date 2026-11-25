@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.0] - 2026-11-26
+
+### Added
+- Persistent date insertion history in the sidebar using `miyapad.db('history')`: stores entries in a named key-value namespace (`entry/` prefix listing and isolated `clear()`) in both standalone IndexedDB and server modes, and uses server-only raw SQL (`exec`/`query` on a `date_log` table) when connected to the Miyapad server
+
 ## [1.3.1] - 2026-11-25
 
 ### Added
