@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-11-25
+
+### Added
+- Inline settings drawer (`hooks.settings`) to choose between ISO (`YYYY-MM-DD`) and browser locale date formats
+- Editor toolbar button (`hooks.toolbar`) and sidebar panel (`hooks.sidebar`) that insert the current date at the cursor via `miyapad.editor`
+
+### Changed
+- Switched `{date}` / `{{date}}` expansion to `miyapad.context.setPlaceholder` so dates expand before World Info scanning and context truncation
+
 ## [1.1.0] - 2026-11-24
 
 ### Changed

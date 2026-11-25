@@ -2,14 +2,14 @@
 
 Minimal `.miyaplugin` reference and test fixture for Miyapad.
 
-Replaces `{{date}}` in outgoing prompts with the current `YYYY-MM-DD` date (`src/main.ts` importing `src/util.ts`, bundled with `esbuild` into `main.js`) and tracks startup loads in `miyapad.storage`.
+Replaces `{date}` / `{{date}}` in prompts via `miyapad.context.setPlaceholder`, adds an inline format setting (`hooks.settings` + `miyapad.ui.SelectBox`), an editor toolbar button (`hooks.toolbar` + `miyapad.editor`), and a sidebar widget (`hooks.sidebar`). Source lives in `src/main.ts` importing `src/util.ts`, bundled with `esbuild` into `main.js`, and tracks startup loads in `miyapad.storage`.
 
 ## Install addresses
 
 Paste any of these addresses into **Preferences → Plugins → Import from URL…**:
 
 - **Latest release:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example`
-- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.1.0`
+- **Pinned tag:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/releases/tag/v1.2.0`
 - **Pinned branch:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/tree/main/dist/example.miyaplugin`
 - **Pinned commit:** `https://github.com/LordFoogThe4rd/miyapad-plugin-example/blob/<commit-sha>/dist/example.miyaplugin`
 

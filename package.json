@@ -1,7 +1,7 @@
 {
   "name": "miyapad-plugin-example",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "build:js": "esbuild src/main.ts --bundle --format=esm --target=es2022 --outfile=main.js",
